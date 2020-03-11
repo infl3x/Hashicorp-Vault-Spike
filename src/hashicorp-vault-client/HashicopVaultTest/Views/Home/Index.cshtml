@@ -1,0 +1,22 @@
+﻿@model HomeModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Vault secrets, fool!</h1>
+    <p>Come getcha vault secrets! 2 for the price of 1!</p>
+
+    <div class="row text-left">
+        <div class="col-md-6">
+            <p>From configuration section <i>vault-startup/*</i>:</p>
+
+            <ul class="list-group">
+                @foreach (KeyValuePair<string, string> configurationItem in Model.VaultStartupConfiguration)
+                {
+                    <li class="list-group-item"><strong>@configurationItem.Key</strong>: @configurationItem.Value</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
